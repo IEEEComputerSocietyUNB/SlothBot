@@ -19,4 +19,11 @@ def sh(c):
     """
     Rasa shell
     """
-    c.run(f"rasa shell", pty=True)
+    c.run(f"rasa run actions & rasa shell", pty=True)
+
+@task
+def stop(c):
+    """
+    Stop rasa server
+    """
+    c.run("pkill -f rasa", pty=True)
