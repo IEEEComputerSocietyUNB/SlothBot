@@ -9,10 +9,13 @@ intents:
   - inform
   - search_provider
   - thanks
+  - inform_name
 
 entities:
   - location
   - facility
+  - address
+  - name
 
 slots:
   location:
@@ -20,6 +23,8 @@ slots:
   facility:
     type: text
   address:
+    type: text
+  name:
     type: text
 
 responses:
@@ -47,6 +52,12 @@ responses:
 
   utter_ask_location:
   - text: "Tell me your location."
+
+  utter_ask_name:
+  - text: "Nice meeting you! What's your name?"
+
+  utter_name:
+  - text: "My name is Rabot, and your name is {name}"
 
 actions:
   - action_facility_search

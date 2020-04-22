@@ -18,6 +18,13 @@
 * thanks
   - utter_goodbye
 
+## greet + get name
+* greet
+  - utter_greet
+  - utter_ask_name
+* inform_name{"name": "name"}
+  - utter_name
+
 ## happy path
 * greet
   - utter_greet

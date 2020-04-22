@@ -13,9 +13,16 @@
 - [Brasilia](location)
 - [Boston](location)
 
+## intent:inform_name
+- [Alexandre](name)
+- My name is [Gabriel](name)
+- I'm called [Felipe](name)
+- They call me Mr. [White](name)
+- Call me by [João](name)
+
 ## intent:search_provider
 - I need a [hospital](facility)
-- find me a nearby [hospital](facility)
+- find me a nearby [mcdonalds](facility)
 - show me [home health agencies](facility)
 - [hospital](facility)
 - find me a nearby [hospital](facility) in [Brasilia](location)
