@@ -20,6 +20,13 @@
 - They call me Mr. [White](name)
 - Call me by [João](name)
 
+## intent:inform_mood
+- [Very happy](mood)
+- [Happy](mood)
+- [Neutral](mood)
+- [Sad](mood)
+- [Very sad](mood)
+
 ## intent:search_provider
 - I need a [hospital](facility)
 - find me a nearby [mcdonalds](facility)

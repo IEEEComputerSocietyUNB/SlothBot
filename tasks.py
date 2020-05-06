@@ -15,15 +15,41 @@ def t(c):
 
 
 @task
-def sh(c):
+def s(c):
     """
     Rasa shell
     """
+    c.run(f"rasa shell", pty=True)
+
+
+@task
+def sh(c):
+    """
+    Rasa shell and server
+    """
     c.run(f"rasa run actions & rasa shell", pty=True)
+
+
+@task
+def sv(c):
+    """ Start Rasa server """
+    c.run(f"rasa run actions", pty=True)
+
 
 @task
 def stop(c):
     """
-    Stop rasa server
+    Stop Rasa server
     """
     c.run("pkill -f rasa", pty=True)
+    print("Rasa server stopped.")
+
+
+
+@task
+def dm(c):
+    """
+    Remove all models on models folder
+    """
+    c.run("rm -f models/*", pty=True)
+    print("All model files removed.")
