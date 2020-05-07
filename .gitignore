@@ -129,4 +129,8 @@ dmypy.json
 .pyre/
 
 # IDE related
-.vscode/ 
+.vscode/
+
+# Project related
+models/*
+results/*

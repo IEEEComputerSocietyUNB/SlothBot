@@ -53,3 +53,12 @@ def dm(c):
     """
     c.run("rm -f models/*", pty=True)
     print("All model files removed.")
+
+@task
+def dt(c):
+    """
+    Remove all models on models folder and retrain
+    """
+    c.run("rm -f models/*", pty=True)
+    print("All model files removed.")
+    t(c)

@@ -1,33 +1,26 @@
 intents:
   - greet
   - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
   - bot_challenge
-  - inform
-  - search_provider
-  - thanks
   - inform_name
   - inform_mood
+  - inform_triage
+  - affirm_triage
+  - deny_triage
 
 entities:
-  - location
-  - facility
-  - address
   - name
   - mood
+  - triage
 
 slots:
-  location:
-    type: text
-  facility:
-    type: text
-  address:
-    type: text
   name:
     type: text
+  triage:
+    type: categorical
+    values:
+      - Yes
+      - No
   mood:
     type: categorical
     values:
@@ -40,30 +33,14 @@ slots:
 
 
 responses:
-  utter_how_can_i_help:
-  - text: "How can I help?"
-
   utter_greet:
   - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
 
   utter_goodbye:
   - text: "Bye"
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
-
-  utter_ask_location:
-  - text: "Tell me your location."
+  - text: "I am a bot, powered by ENERGY."
 
   utter_ask_name:
   - text: "Nice meeting you! What's your name?"
@@ -88,8 +65,16 @@ responses:
   utter_user_mood:
   - text: "You are feeling {mood}."
 
+  utter_ask_triage:
+  - text: "Do you want to go through our triage?"
+    buttons:
+      - title: "Yes, I feel comfortable"
+      - title: "No, I don't feel comfortable"
+
+  utter_triage_choice:
+  - text: "You chose to answer? {triage}."
+
 actions:
-  - action_facility_search
   - action_debug_bot
 
 session_config:

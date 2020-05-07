@@ -6,13 +6,6 @@
 - good evening
 - hey there
 
-## intent:inform
-- [Sitka](location)
-- [Juneau](location)
-- [Chicago](location)
-- [Brasilia](location)
-- [Boston](location)
-
 ## intent:inform_name
 - [Alexandre](name)
 - My name is [Gabriel](name)
@@ -27,16 +20,9 @@
 - [Sad](mood)
 - [Very sad](mood)
 
-## intent:search_provider
-- I need a [hospital](facility)
-- find me a nearby [mcdonalds](facility)
-- show me [home health agencies](facility)
-- [hospital](facility)
-- find me a nearby [hospital](facility) in [Brasilia](location)
-
-## intent:thanks
-- thanks
-- thank you
+## intent:inform_triage
+- [Yes](triage)
+- [No](triage)
 
 ## intent:goodbye
 - bye
@@ -44,42 +30,11 @@
 - see you around
 - see you later
 
-## intent:affirm
-- yes
-- indeed
-- of course
-- that sounds good
-- correct
+## intent:affirm_triage
+- [Yes](triage), I feel comfortable
 
-## intent:deny
-- no
-- never
-- I don't think so
-- don't like that
-- no way
-- not really
-
-## intent:mood_great
-- perfect
-- very good
-- great
-- amazing
-- wonderful
-- I am feeling very good
-- I am great
-- I'm good
-
-## intent:mood_unhappy
-- sad
-- very sad
-- unhappy
-- bad
-- very bad
-- awful
-- terrible
-- not very good
-- extremely sad
-- so sad
+## intent:deny_triage
+- [No](triage), I don't feel comfortable
 
 ## intent:bot_challenge
 - are you a bot?
