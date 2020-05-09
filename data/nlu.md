@@ -41,3 +41,44 @@
 - are you a human?
 - am I talking to a bot?
 - am I talking to a human?
+
+## intent:inform_age
+- I am [22](age) years old
+- [20](age)
+- [24](age) years
+- [23](age)
+
+## intent:inform_gender
+- [female]{"entity": "gender", "value": "female"}
+- [male]{"entity": "gender", "value": "male"}
+- I am a [girl]{"entity": "gender", "value": "female"}
+- I am a [boy]{"entity": "gender", "value": "male"}
+- I am a [woman]{"entity": "gender", "value": "female"}
+- [man]{"entity": "gender", "value": "male"}
+
+## intent:inform_neighborhood
+- [DF](neighborhood)
+
+## intent:inform_therapy
+- [Yes]{"entity": "therapy", "value": "True"}
+- [no]{"entity": "therapy", "value": "False"}
+
+## intent:inform_ethnicity
+- I am [white](ethnicity)
+
+## intent:inform_work
+- [Yes]{"entity": "work", "value": "True"}
+- [no]{"entity": "work", "value": "False"}
+
+## intent:inform_major
+-[Psicologia](major)
+-[Engenharia](major)
+
+## intent:inform_timeunb
+- [1](timeunb)
+- [3](timeunb)
+
+## intent: affirm
+- Yes
+- of course
+- sure
