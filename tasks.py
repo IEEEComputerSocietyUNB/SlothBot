@@ -4,6 +4,12 @@ from invoke import task
 
 # Parameterizing tasks with invoke
 # https://docs.pyinvoke.org/en/0.11.1/getting_started.html#parameterizing-tasks
+@task
+def b(c):
+    """
+    Formats code according to PEP8's pattern
+    """
+    c.run("black actions.py tasks.py")
 
 
 @task
@@ -45,7 +51,6 @@ def stop(c):
     print("Rasa server stopped.")
 
 
-
 @task
 def dm(c):
     """
@@ -54,11 +59,11 @@ def dm(c):
     c.run("rm -f models/*", pty=True)
     print("All model files removed.")
 
+
 @task
 def dt(c):
     """
     Remove all models on models folder and retrain
     """
-    c.run("rm -f models/*", pty=True)
-    print("All model files removed.")
+    dm(c)
     t(c)
