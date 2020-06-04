@@ -73,12 +73,25 @@ class DemographicForm(FormAction):
         or a list of them, where a first match will be picked"""
         return {
             "age": self.from_entity(entity="age"),
+
             "gender": self.from_entity(entity="gender"),
+
             "neighborhood": self.from_entity(entity="neighborhood"),
-            "therapy": self.from_entity(entity="therapy"),
+
+            "therapy": [
+            self.from_intent(intent="affirm", value=True),
+            self.from_intent(intent="deny", value=False)
+            ],
+
             "ethnicity": self.from_entity(entity="ethnicity"),
-            "work": self.from_entity(entity="work"),
+
+            "work": [
+            self.from_intent(intent="affirm", value=True),
+            self.from_intent(intent="deny", value=False)
+            ],
+
             "major": self.from_entity(entity="major"),
+
             "timeunb": self.from_entity(entity="timeunb"),
         }
 

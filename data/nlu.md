@@ -50,23 +50,28 @@
 - I am [22](age) years old
 - [20](age)
 - [24](age) years
-- [23](age)
+- [23](age) years old
 
 ## intent:inform_gender
-- [female]{"entity": "gender", "value": "female"}
-- [male]{"entity": "gender", "value": "male"}
-- I am a [girl]{"entity": "gender", "value": "female"}
-- I am a [boy]{"entity": "gender", "value": "male"}
-- I am a [woman]{"entity": "gender", "value": "female"}
-- [man]{"entity": "gender", "value": "male"}
+- [female](gender)
+- [male](gender)
+- I am a [female](gender)
+
+## synonym:female
+- girl
+- woman
+- F
+
+## synonym:male
+- boy
+- man
+- M
 
 ## intent:inform_neighborhood
 - [DF](neighborhood)
 - [GO](neighborhood)
+- [SP](neighborhood)
 
-## intent:inform_therapy
-- [Yes]{"entity": "therapy", "value": "True"}
-- [no]{"entity": "therapy", "value": "False"}
 
 ## intent:inform_ethnicity
 - I am [white](ethnicity)
@@ -74,13 +79,10 @@
 - I am [asian](ethnicity)
 - I am [green](ethnicity)
 
-## intent:inform_work
-- [Yes]{"entity": "work", "value": "True"}
-- [no]{"entity": "work", "value": "False"}
-
 ## intent:inform_major
--[Psicologia](major)
--[Engenharia](major)
+-[Psychology](major)
+-[Engineer](major)
+-[Philosophy](major)
 
 ## intent:inform_timeunb
 - [1](timeunb)
@@ -90,3 +92,16 @@
 - Yes
 - of course
 - sure
+- Ok
+- Y
+- Yep
+
+
+## intent:deny
+- No
+- Nops
+- Never
+- Of course not
+- N
+- No, I don't
+- No, I am not

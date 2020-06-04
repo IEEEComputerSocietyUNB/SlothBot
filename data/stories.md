@@ -25,6 +25,11 @@
   - slot{"age": 22}
   - slot{"gender": "Male"}
   - slot{"timeunb": 3}
+  - slot{"neighborhood": "DF"}
+  - slot{"therapy": false}
+  - slot{"work": false}
+  - slot{"major": "Engineer"}
+  - slot{"ethnicity": asian}
   - action_debug_bot
 
 <!--* inform_age{"age":"age"}

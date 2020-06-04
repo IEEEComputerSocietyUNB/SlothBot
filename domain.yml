@@ -16,6 +16,7 @@ intents:
   - inform_major
   - inform_timeunb
   - affirm
+  - deny
 
 entities:
   - name
@@ -120,13 +121,6 @@ responses:
 
   utter_ask_gender:
   - text: "To which gender identity do you most identify?"
-    buttons:
-      - title: "1"
-        payload: "Male"
-      - title: "2"
-        payload: "Female"
-      - title: "3"
-        payload: "Other"
 
   utter_ask_neighborhood:
   - text: "Where do you live?"
