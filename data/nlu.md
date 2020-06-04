@@ -32,9 +32,13 @@
 
 ## intent:affirm_triage
 - [Yes](triage), I feel comfortable
+- [Yes](triage), please
+- [Yes](triage), I do
 
 ## intent:deny_triage
 - [No](triage), I don't feel comfortable
+- [No](triage), please
+- [No](triage)
 
 ## intent:bot_challenge
 - are you a bot?
@@ -58,6 +62,7 @@
 
 ## intent:inform_neighborhood
 - [DF](neighborhood)
+- [GO](neighborhood)
 
 ## intent:inform_therapy
 - [Yes]{"entity": "therapy", "value": "True"}
@@ -65,6 +70,9 @@
 
 ## intent:inform_ethnicity
 - I am [white](ethnicity)
+- I am [black](ethnicity)
+- I am [asian](ethnicity)
+- I am [green](ethnicity)
 
 ## intent:inform_work
 - [Yes]{"entity": "work", "value": "True"}
@@ -78,7 +86,7 @@
 - [1](timeunb)
 - [3](timeunb)
 
-## intent: affirm
+## intent:affirm
 - Yes
 - of course
 - sure

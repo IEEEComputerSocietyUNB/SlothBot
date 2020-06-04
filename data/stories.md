@@ -1,4 +1,4 @@
-## greet + get name + check mood
+<!-- ## greet + get name + check mood
 * greet
   - utter_greet
   - utter_ask_name
@@ -9,9 +9,8 @@
   - slot{"mood": "mood"}
   - utter_ask_triage
 * inform_triage{"triage": "triage"}
-  - action_debug_bot
   - slot{"triage": "triage"}
-  - utter_triage_choice
+  - utter_triage_choice -->
 
 
 ## greet + name + demographic
@@ -23,6 +22,11 @@
   - utter_ask_demographic
 * affirm
   - demographic_form
+  - slot{"age": 22}
+  - slot{"gender": "Male"}
+  - slot{"timeunb": 3}
+  - action_debug_bot
+
 <!--* inform_age{"age":"age"}
   - utter_ask_gender
 * inform_gender{"gender":"gender"}
