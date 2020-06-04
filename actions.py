@@ -29,15 +29,19 @@ from rasa_sdk.forms import FormAction
 
 #         return [SlotSet("address", address)]
 
+
 class ActionDebugBot(Action):
     def name(self) -> Text:
         return "action_debug_bot"
 
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]):
-            import ipdb; ipdb.set_trace()
-            dispatcher.utter_message(text="Debug away, captain!")
+    def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ):
+        dispatcher.utter_message(text="Debug away, captain!")
+
 
 class DemographicForm(FormAction):
     """Example of a custom form action"""
@@ -50,8 +54,16 @@ class DemographicForm(FormAction):
     def required_slots(tracker: Tracker) -> List[Text]:
         """A list of required slots that the form has to fill"""
 
-        return ["age", "gender", "neighborhood", "therapy", "ethnicity",
-        "work", "major", "timeunb"]
+        return [
+            "age",
+            "gender",
+            "neighborhood",
+            "therapy",
+            "ethnicity",
+            "work",
+            "major",
+            "timeunb",
+        ]
 
     def slot_mappings(self):
         """A dictionary to map required slots to
@@ -60,25 +72,24 @@ class DemographicForm(FormAction):
         - a whole message
         or a list of them, where a first match will be picked"""
         return {
-        "age": self.from_entity(entity="age"),
-        "gender": self.from_entity(entity="gender"),
-        "neighborhood": self.from_entity(entity="neighborhood"),
-        "therapy": self.from_entity(entity="therapy"),
-        "ethnicity": self.from_entity(entity="ethnicity"),
-        "work": self.from_entity(entity="work"),
-        "major": self.from_entity(entity="major"),
-        "timeunb": self.from_entity(entity="timeunb")
+            "age": self.from_entity(entity="age"),
+            "gender": self.from_entity(entity="gender"),
+            "neighborhood": self.from_entity(entity="neighborhood"),
+            "therapy": self.from_entity(entity="therapy"),
+            "ethnicity": self.from_entity(entity="ethnicity"),
+            "work": self.from_entity(entity="work"),
+            "major": self.from_entity(entity="major"),
+            "timeunb": self.from_entity(entity="timeunb"),
         }
 
-
     def submit(
-    self,
-    dispatcher: CollectingDispatcher,
-    tracker: Tracker,
-    domain: Dict[Text, Any],
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
     ) -> List[Dict]:
         """Define what the form has to do
             after all required slots are filled"""
 
-        dispatcher.utter_template('utter_end_demographic', tracker)
+        dispatcher.utter_template("utter_end_demographic", tracker)
         return []
