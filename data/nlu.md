@@ -61,6 +61,7 @@
 - girl
 - woman
 - F
+- female
 
 ## synonym:male
 - boy
@@ -98,10 +99,10 @@
 
 
 ## intent:deny
-- No
-- Nops
-- Never
-- Of course not
-- N
-- No, I don't
-- No, I am not
+- no
+- nops
+- never
+- of course not
+- n
+- no, I don't
+- no, I am not
