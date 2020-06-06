@@ -24,12 +24,12 @@
   - demographic_form
   - slot{"age": 22}
   - slot{"gender": "Male"}
-  - slot{"timeunb": 3}
   - slot{"neighborhood": "DF"}
   - slot{"therapy": false}
+  - slot{"ethnicity": "asian"}
   - slot{"work": false}
   - slot{"major": "Engineer"}
-  - slot{"ethnicity": asian}
+  - slot{"timeunb": 3}
   - action_debug_bot
 
 <!--* inform_age{"age":"age"}
