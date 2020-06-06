@@ -80,7 +80,7 @@ def dm(c):
         c.run("rm -f models/*", pty=True)
         print("All model files removed.")
     else:
-        c.run("rd /s /q models/*")
+        c.run("rd /s /q models/")
         print("All model files removed.")
 
 @task
