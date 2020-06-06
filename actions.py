@@ -71,7 +71,7 @@ class DemographicForm(FormAction):
         - intent: value pairs
         - a whole message
         or a list of them, where a first match will be picked"""
-        return {
+        response = {
             "age": self.from_entity(entity="age"),
 
             "gender": self.from_entity(entity="gender"),
@@ -94,6 +94,8 @@ class DemographicForm(FormAction):
 
             "timeunb": self.from_entity(entity="timeunb"),
         }
+        #print(response)
+        return(response)
 
     def submit(
         self,
