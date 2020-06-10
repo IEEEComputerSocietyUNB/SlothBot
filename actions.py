@@ -72,7 +72,11 @@ class DemographicForm(FormAction):
         - a whole message
         or a list of them, where a first match will be picked"""
         response = {
-            "age": self.from_entity(entity="age"),
+            "age": [
+                self.from_entity(
+                    entity="number", intent=["inform_number"]
+                ),
+            ],
 
             "gender": self.from_entity(entity="gender"),
 
@@ -92,7 +96,11 @@ class DemographicForm(FormAction):
 
             "major": self.from_entity(entity="major"),
 
-            "timeunb": self.from_entity(entity="timeunb"),
+            "timeunb": [
+                self.from_entity(
+                    entity="number", intent=["inform_number"]
+                ),
+            ],
         }
         #print(response)
         return(response)
@@ -106,5 +114,5 @@ class DemographicForm(FormAction):
         """Define what the form has to do
             after all required slots are filled"""
 
-        dispatcher.utter_template("utter_end_demographic", tracker)
+        dispatcher.utter_message("utter_end_demographic", tracker)
         return []

@@ -4,17 +4,14 @@ intents:
   - bot_challenge
   - inform_name
   - inform_mood
-  - inform_triage
-  - affirm_triage
   - deny_triage
-  - inform_age
   - inform_gender
   - inform_neighborhood
   - inform_therapy
   - inform_ethnicity
   - inform_work
   - inform_major
-  - inform_timeunb
+  - inform_number
   - affirm
   - deny
 
@@ -22,7 +19,7 @@ entities:
   - name
   - mood
   - triage
-  - age
+  - number
   - gender
   - neighborhood
   - therapy

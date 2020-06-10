@@ -46,11 +46,13 @@
 - am I talking to a bot?
 - am I talking to a human?
 
-## intent:inform_age
-- I am [22](age) years old
-- [20](age)
-- [24](age) years
-- [23](age) years old
+## intent:inform_number
+- [22](number)
+- [20](number)
+- [24](number) years
+- [23](number) years old
+- [1](number)
+- [3](number)
 
 ## intent:inform_gender
 - [female](gender)
@@ -84,10 +86,6 @@
 -[Psychology](major)
 -[Engineer](major)
 -[Philosophy](major)
-
-## intent:inform_timeunb
-- [1](timeunb)
-- [3](timeunb)
 
 ## intent:affirm
 - Yes
