@@ -4,12 +4,10 @@ intents:
   - bot_challenge
   - inform_name
   - inform_mood
-  - deny_triage
   - inform_gender
   - inform_neighborhood
   - inform_therapy
   - inform_ethnicity
-  - inform_work
   - inform_major
   - inform_number
   - affirm
@@ -22,11 +20,8 @@ entities:
   - number
   - gender
   - neighborhood
-  - therapy
   - ethnicity
-  - work
   - major
-  - timeunb
 
 slots:
   name:
@@ -74,15 +69,23 @@ responses:
 
   utter_goodbye:
   - text: "Bye"
+  - text: "Bye, {name}. See you next time!"
+  - text: "Goodbye, have a nice day!"
+  - text: "Bye, human. I will be here if you want to talk more."
 
   utter_iamabot:
   - text: "I am a bot, powered by ENERGY."
 
   utter_ask_name:
   - text: "Nice meeting you! What's your name?"
+  - text: "How can I call you?"
+  - text: "I don't know your name yet. What's your name?"
 
   utter_name:
-  - text: "Nice name! My name is Rabot!"
+  - text: "Nice name, {name}! My name is Rabot!"
+  - text: "My name is Rabot, {name}."
+  - text: "Lovely name, {name}! My name is Rabot."
+  - text: "{name}, what a different name! I'm Rabot!"
 
   utter_ask_mood:
   - text: "How are you feeling today, {name}?"
@@ -139,6 +142,7 @@ responses:
 
   utter_end_demographic:
   - text: "Great! Now I know more about you."
+  - text: "Thank you! I know you much better now."
 
 actions:
   - action_debug_bot

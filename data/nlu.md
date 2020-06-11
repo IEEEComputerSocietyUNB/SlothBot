@@ -8,10 +8,10 @@
 
 ## intent:inform_name
 - [Alexandre](name)
-- My name is [Gabriel](name)
+- my name is [Gabriel](name)
 - I'm called [Felipe](name)
-- They call me Mr. [White](name)
-- Call me by [João](name)
+- they call me Mr. [White](name)
+- call me by [João](name)
 
 ## intent:inform_mood
 - [Very happy](mood)
@@ -20,25 +20,11 @@
 - [Sad](mood)
 - [Very sad](mood)
 
-## intent:inform_triage
-- [Yes](triage)
-- [No](triage)
-
 ## intent:goodbye
 - bye
 - goodbye
 - see you around
 - see you later
-
-## intent:affirm_triage
-- [Yes](triage), I feel comfortable
-- [Yes](triage), please
-- [Yes](triage), I do
-
-## intent:deny_triage
-- [No](triage), I don't feel comfortable
-- [No](triage), please
-- [No](triage)
 
 ## intent:bot_challenge
 - are you a bot?
@@ -88,12 +74,12 @@
 -[Philosophy](major)
 
 ## intent:affirm
-- Yes
+- yes
 - of course
 - sure
-- Ok
-- Y
-- Yep
+- ok
+- y
+- yep
 
 
 ## intent:deny
