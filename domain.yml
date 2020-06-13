@@ -6,7 +6,6 @@ intents:
   - inform_mood
   - inform_gender
   - inform_neighborhood
-  - inform_therapy
   - inform_ethnicity
   - inform_major
   - inform_number
@@ -34,11 +33,7 @@ slots:
   age:
     type: float
   gender:
-    type: categorical
-    values:
-      - Male
-      - Female
-      - Other
+    type: text
   neighborhood:
     type: text
   therapy:

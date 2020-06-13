@@ -44,6 +44,12 @@
 - [female](gender)
 - [male](gender)
 - I am a [female](gender)
+- [girl](gender)
+- [woman](gender)
+- [F](gender)
+- [boy](gender)
+- [man](gender)
+- [M](gender)
 
 ## synonym:female
 - girl

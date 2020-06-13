@@ -77,7 +77,7 @@ class DemographicForm(FormAction):
                     entity="number", intent=["inform_number"]
                 ),
             ],
-
+            
             "gender": self.from_entity(entity="gender"),
 
             "neighborhood": self.from_entity(entity="neighborhood"),
