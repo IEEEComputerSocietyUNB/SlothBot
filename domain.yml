@@ -60,7 +60,10 @@ slots:
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+  - text: "Hey!"
+  - text: "Hello, human!"
+  - text: "Good to see you, human!"
+  - text: "Hi!"
 
   utter_goodbye:
   - text: "Bye"
@@ -136,8 +139,15 @@ responses:
   - text: "How many semesters are you studying at UnB?"
 
   utter_end_demographic:
-  - text: "Great! Now I know more about you."
-  - text: "Thank you! I know you much better now."
+  - text: "Great! Now I know more about you. Seems you are a {age} years old {gender} who is doing {major}!"
+  - text: "Thank you! I know you much better now. Seems you are a {age} years old {gender} who is doing {major}!"
+
+  utter_mood_feedback:
+  - text: "I see, you are feeling {mood} today..."
+
+  utter_continue:
+  - text: "Should we keep going?"
+  - text: "Can we keep talking?"
 
 actions:
   - action_debug_bot

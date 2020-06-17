@@ -10,7 +10,8 @@
   - utter_ask_triage
 * inform_triage{"triage": "triage"}
   - slot{"triage": "triage"}
-  - utter_triage_choice -->
+  - utter_triage_choice
+  - action_debug_bot-->
 
 
 ## greet + name + demographic
@@ -30,8 +31,57 @@
   - slot{"work": false}
   - slot{"major": "Engineer"}
   - slot{"timeunb": 3}
-  - action_debug_bot
+  - utter_continue
+* affirm
+  - utter_ask_mood
+* inform_mood{"mood": "mood"}
+  - slot{"mood": "mood"}
 
+## greet + name + no_demographic + mood
+* greet
+  - utter_greet
+  - utter_ask_name
+* inform_name{"name": "name"}
+  - utter_name
+  - utter_ask_demographic
+* deny
+  - utter_continue
+* affirm
+  - utter_ask_mood
+* inform_mood{"mood": "mood"}
+  - slot{"mood": "mood"}
+  - utter_mood_feedback
+  - utter_ask_triage
+* affirm
+
+
+## greet + mood + triage
+* greet
+  - slot{"name":"name"}
+  - utter_greet
+  - utter_ask_mood
+* inform_mood{"mood": "mood"}
+  - slot{"mood": "mood"}
+  - utter_mood_feedback
+  - utter_continue
+* affirm
+  - utter_ask_triage
+* affirm
+  - utter_goodbye
+
+## greet + mood + no_triage
+* greet
+  - slot{"name":"name"}
+  - utter_greet
+  - utter_ask_mood
+* inform_mood{"mood": "mood"}
+  - slot{"mood": "mood"}
+  - utter_mood_feedback
+  - utter_continue
+* affirm
+  - utter_ask_triage
+* deny
+  - utter_goodbye
 <!--* inform_age{"age":"age"}
   - utter_ask_gender
 * inform_gender{"gender":"gender"}
