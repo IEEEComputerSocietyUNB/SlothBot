@@ -30,6 +30,47 @@ from rasa_sdk.forms import FormAction
 #         return [SlotSet("address", address)]
 
 
+class StoreMood(FormAction):
+    def name(self) -> Text:
+        return "action_store_mood"
+
+    @staticmethod
+    def required_slots(tracker: Tracker) -> List[Text]:
+        """A list of required slots that the form has to fill"""
+
+        return [
+            "mood_historic",
+        ]
+
+    def slot_mappings(self):
+        """A dictionary to map required slots to
+        - an extracted entity
+        - intent: value pairs
+        - a whole message
+        or a list of them, where a first match will be picked"""
+        response = {
+            "mood_historic": [
+                self.from_entity(
+                    entity="mood", intent=["inform_mood"]
+                ),
+            ],
+        }
+        return(response)
+
+    def submit(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict]:
+        """Define what the form has to do
+            after all required slots are filled"""
+
+        dispatcher.utter_template(text="Ok, I saved your mood!")
+        return []
+
+
+
 class ActionDebugBot(Action):
     def name(self) -> Text:
         return "action_debug_bot"
@@ -77,7 +118,7 @@ class DemographicForm(FormAction):
                     entity="number", intent=["inform_number"]
                 ),
             ],
-            
+
             "gender": self.from_entity(entity="gender"),
 
             "neighborhood": self.from_entity(entity="neighborhood"),
@@ -114,5 +155,5 @@ class DemographicForm(FormAction):
         """Define what the form has to do
             after all required slots are filled"""
 
-        dispatcher.utter_message("utter_end_demographic", tracker)
+        dispatcher.utter_template("utter_end_demographic", tracker)
         return []

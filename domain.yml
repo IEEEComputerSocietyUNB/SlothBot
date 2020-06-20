@@ -25,11 +25,7 @@ entities:
 slots:
   name:
     type: text
-  triage:
-    type: categorical
-    values:
-      - Yes
-      - No
+
   age:
     type: float
   gender:
@@ -55,8 +51,8 @@ slots:
       - Neutral
       - Sad
       - Very sad
-
-
+  mood_historic:
+    type: list
 
 responses:
   utter_greet:
@@ -85,7 +81,7 @@ responses:
   - text: "Lovely name, {name}! My name is Rabot."
   - text: "{name}, what a different name! I'm Rabot!"
 
-  utter_ask_mood:
+  utter_ask_mood_historic:
   - text: "How are you feeling today, {name}?"
     buttons:
       - title: "1"
@@ -145,12 +141,19 @@ responses:
   utter_mood_feedback:
   - text: "I see, you are feeling {mood} today..."
 
+  utter_ask_show_mood_historic:
+  - text: "Do you want to know about how your previous mood?"
+
+  utter_mood_historic:
+  - text: "This is all the data we have about your mood in the past: {mood_historic}}"
+
   utter_continue:
   - text: "Should we keep going?"
   - text: "Can we keep talking?"
 
 actions:
   - action_debug_bot
+  - action_store_mood
 
 forms:
   - demographic_form

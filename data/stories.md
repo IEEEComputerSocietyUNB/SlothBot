@@ -11,7 +11,7 @@
 * inform_triage{"triage": "triage"}
   - slot{"triage": "triage"}
   - utter_triage_choice
-  - action_debug_bot-->
+  - action_debug_bot
 
 
 ## greet + name + demographic
@@ -36,6 +36,12 @@
   - utter_ask_mood
 * inform_mood{"mood": "mood"}
   - slot{"mood": "mood"}
+  - action_store_mood
+  - slot{"mood_historic":"mood_historic"}
+  - utter_ask_mood_historic
+* affirm
+  - utter_mood_h
+-->
 
 ## greet + name + no_demographic + mood
 * greet
@@ -47,14 +53,17 @@
 * deny
   - utter_continue
 * affirm
-  - utter_ask_mood
-* inform_mood{"mood": "mood"}
+  - action_store_mood
+  - slot{"mood_historic":"mood_historic"}
   - slot{"mood": "mood"}
   - utter_mood_feedback
-  - utter_ask_triage
+  - utter_ask_show_mood_historic
 * affirm
+  - utter_mood_historic
 
 
+<!--
+* inform_mood{"mood": "mood"}
 ## greet + mood + triage
 * greet
   - slot{"name":"name"}
