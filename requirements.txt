@@ -4,3 +4,4 @@ flake8==3.7.9
 invoke==1.4.1
 rasa==1.9.6
 scipy==1.4.1
+rasa_plus
