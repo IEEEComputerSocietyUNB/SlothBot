@@ -1,0 +1,10 @@
+actions:
+  - action_debug_bot
+  - non_existent_action
+
+forms:
+  - demographic_form
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
