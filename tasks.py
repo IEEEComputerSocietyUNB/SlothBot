@@ -2,6 +2,7 @@ import os
 import platform
 from invoke import task
 from functools import wraps
+import rasa_plus
 
 
 # Parameterizing tasks with invoke
@@ -19,6 +20,7 @@ def t(c):
     """
     Train Rasa bot
     """
+    rasa_plus.unify_domain()
     if platform.system() != "Windows":
         c.run(f"rasa train", pty=True)
     else:
