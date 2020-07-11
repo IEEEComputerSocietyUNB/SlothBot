@@ -29,46 +29,75 @@ from rasa_sdk.forms import FormAction
 
 #         return [SlotSet("address", address)]
 
+#    """Example of a custom form action"""
+#
+#    def name(self):
+#        """Unique identifier of the form"""
+#        return "greetName_form"
 
-class StoreMood(FormAction):
+#    @staticmethod
+#    def required_slots(tracker: Tracker) -> List[Text]:
+#        """A list of required slots that the form has to fill"""
+
+#        return ["name"]
+
+#    def slot_mappings(self):
+#        response = {
+#            "name": [self.from_entity(
+#                entity="name", intent=["inform_name"]
+#                ),
+#            ]
+#        }
+    #print(response)
+#        return(response)
+
+#    def submit(
+#        self,
+#        dispatcher: CollectingDispatcher,
+#        tracker: Tracker,
+#        domain: Dict[Text, Any],
+#    ) -> List[Dict]:
+#        """Define what the form has to do
+#            after all required slots are filled"""
+
+#        dispatcher.utter_template("utter_greet_name", tracker)
+#        return []
+
+
+#class ActionGreet(Action):
+#    def name(self) -> Text:
+#        return "action_greet"
+#
+#    def run(self, dispatcher: CollectingDispatcher,
+#            tracker: Tracker,
+#            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+#        name = tracker.get_slot("mood")
+
+#        if mood == "None":
+
+
+#        with open("mood_historic.txt", "a+") as file:
+#            file.write(mood + '\n')
+
+#    dispatcher.utter_template("utter_greet", tracker)
+
+
+class ActionStoreMood(Action):
     def name(self) -> Text:
         return "action_store_mood"
 
-    @staticmethod
-    def required_slots(tracker: Tracker) -> List[Text]:
-        """A list of required slots that the form has to fill"""
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        return [
-            "mood_historic",
-        ]
+        mood = tracker.get_slot("mood")
 
-    def slot_mappings(self):
-        """A dictionary to map required slots to
-        - an extracted entity
-        - intent: value pairs
-        - a whole message
-        or a list of them, where a first match will be picked"""
-        response = {
-            "mood_historic": [
-                self.from_entity(
-                    entity="mood", intent=["inform_mood"]
-                ),
-            ],
-        }
-        return(response)
+        with open("mood_historic.txt", "a+") as file:
+            file.write(mood + '\n')
 
-    def submit(
-        self,
-        dispatcher: CollectingDispatcher,
-        tracker: Tracker,
-        domain: Dict[Text, Any],
-    ) -> List[Dict]:
-        """Define what the form has to do
-            after all required slots are filled"""
-
-        dispatcher.utter_template(text="Ok, I saved your mood!")
-        return []
-
+        #dispatcher.utter_message(text=f"Your mood '{mood}' have been recorded!")
+        #return [SlotSet("mood_historic", mood)]
 
 
 class ActionDebugBot(Action):

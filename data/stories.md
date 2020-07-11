@@ -43,23 +43,38 @@
   - utter_mood_h
 -->
 
-## greet + name + no_demographic + mood
+## greet + no name + no_demographic + mood
 * greet
   - utter_greet
   - utter_ask_name
-* inform_name{"name": "name"}
+* inform_name{"name": "None"}
   - utter_name
   - utter_ask_demographic
 * deny
   - utter_continue
 * affirm
+  - utter_ask_mood
+* inform_mood{"mood": "mood"}
   - action_store_mood
-  - slot{"mood_historic":"mood_historic"}
-  - slot{"mood": "mood"}
+  - slot{"mood_historic":"mood"}
   - utter_mood_feedback
   - utter_ask_show_mood_historic
 * affirm
   - utter_mood_historic
+
+
+## greet + name + no_demographic + mood
+  * greet
+    - slot{"name": "name"}
+    - utter_greet_name
+    - utter_ask_mood
+  * inform_mood{"mood": "mood"}
+    - action_store_mood
+    - slot{"mood_historic":"mood"}
+    - utter_mood_feedback
+    - utter_ask_show_mood_historic
+  * affirm
+    - utter_mood_historic
 
 
 <!--

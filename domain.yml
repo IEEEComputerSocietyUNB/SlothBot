@@ -61,6 +61,12 @@ responses:
   - text: "Good to see you, human!"
   - text: "Hi!"
 
+  utter_greet_name:
+  - text: "Hey, {name}!"
+  - text: "Hello, {name}!"
+  - text: "Good to see you, {name}!"
+  - text: "Hi, {name}!"
+
   utter_goodbye:
   - text: "Bye"
   - text: "Bye, {name}. See you next time!"
@@ -81,7 +87,7 @@ responses:
   - text: "Lovely name, {name}! My name is Rabot."
   - text: "{name}, what a different name! I'm Rabot!"
 
-  utter_ask_mood_historic:
+  utter_ask_mood:
   - text: "How are you feeling today, {name}?"
     buttons:
       - title: "1"
@@ -145,7 +151,7 @@ responses:
   - text: "Do you want to know about how your previous mood?"
 
   utter_mood_historic:
-  - text: "This is all the data we have about your mood in the past: {mood_historic}}"
+  - text: "This is all the data we have about your mood in the past: {mood_historic}"
 
   utter_continue:
   - text: "Should we keep going?"
