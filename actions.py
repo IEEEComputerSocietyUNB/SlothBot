@@ -6,7 +6,7 @@
 
 
 # This is a simple example for a custom action which utters "Hello World!"
-
+from datetime import datetime
 from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
@@ -90,11 +90,16 @@ class ActionStoreMood(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
+        user = tracker.slots.get("name", "no name")
         mood = tracker.get_slot("mood")
+        timestamp = datetime.fromtimestamp(tracker.events[-1]['timestamp'])
+        timestamp =  timestamp.strftime("%Y-%m-%d %H:%M:%S")
+
 
         with open("mood_historic.txt", "a+") as file:
-            file.write(mood + '\n')
+            file.write(f"[{timestamp}:{user}] - {mood}\n")
+
+        tracker.slots["mood_historic"] = mood
 
         #dispatcher.utter_message(text=f"Your mood '{mood}' have been recorded!")
         #return [SlotSet("mood_historic", mood)]
