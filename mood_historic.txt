@@ -1,5 +1,5 @@
-SadHappyNeutral
-Very Happy
-Happy
-Happy
-Happy
+[2020-07-11 11:11:07:Alexandre] - Very Sad
+[2020-07-11 11:16:11:Alexandre] - Very Happy
+[2020-07-11 11:17:06:Alexandre] - Very Happy
+[2020-07-11 11:17:45:Alexandre] - Happy
+[2020-07-11 11:22:22:Alexandre] - Sad

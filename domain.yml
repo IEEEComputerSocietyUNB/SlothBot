@@ -43,6 +43,62 @@ slots:
   timeunb:
     type: float
 
+  anxiety_dsm:
+    type: categorical
+    values:
+      - Almost every day
+      - At least 3 times a week
+      - Some days
+      - Almost never
+      - Never
+  drug_dsm:
+    type: categorical
+    values:
+      - Almost every day
+      - At least 3 times a week
+      - Some days
+      - Almost never
+      - Never
+  depression_dsm:
+    type: categorical
+    values:
+      - Almost every day
+      - At least 3 times a week
+      - Some days
+      - Almost never
+      - Never
+  mania_dsm:
+    type: categorical
+    values:
+      - Almost every day
+      - At least 3 times a week
+      - Some days
+      - Almost never
+      - Never
+  psychosis_dsm:
+    type: categorical
+    values:
+      - Almost every day
+      - At least 3 times a week
+      - Some days
+      - Almost never
+      - Never
+  dissociation_dsm:
+    type: categorical
+    values:
+      - Almost every day
+      - At least 3 times a week
+      - Some days
+      - Almost never
+      - Never
+  suicide_dsm:
+    type: categorical
+    values:
+      - Almost every day
+      - At least 3 times a week
+      - Some days
+      - Almost never
+      - Never
   mood:
     type: categorical
     values:
@@ -100,6 +156,90 @@ responses:
         payload: "Sad"
       - title: "5"
         payload: "Very Sad"
+
+  utter_ask_anxiety_dsm:
+  - text: "Have you been avoiding anxious situations?"
+    buttons:
+      - title: "1"
+        payload: "Almost every day"
+      - title: "2"
+        payload: "At least 3 times a week"
+      - title: "3"
+        payload: "Almost never"
+      - title: "4"
+        payload: "Never"
+
+  utter_ask_drug_dsm:
+  - text: "Have you been ingesting any drugs lately?"
+    buttons:
+      - title: "1"
+        payload: "Almost every day"
+      - title: "2"
+        payload: "At least 3 times a week"
+      - title: "3"
+        payload: "Almost never"
+      - title: "4"
+        payload: "Never"
+
+  utter_ask_depression_dsm:
+  - text: "Have you been feeling down lately?"
+    buttons:
+      - title: "1"
+        payload: "Almost every day"
+      - title: "2"
+        payload: "At least 3 times a week"
+      - title: "3"
+        payload: "Almost never"
+      - title: "4"
+        payload: "Never"
+
+  utter_ask_mania_dsm:
+  - text: "Have you been happy lately?"
+    buttons:
+      - title: "1"
+        payload: "Almost every day"
+      - title: "2"
+        payload: "At least 3 times a week"
+      - title: "3"
+        payload: "Almost never"
+      - title: "4"
+        payload: "Never"
+
+  utter_ask_psychosis_dsm:
+  - text: "Have you been hearing other people's thoughts lately?"
+    buttons:
+      - title: "1"
+        payload: "Almost every day"
+      - title: "2"
+        payload: "At least 3 times a week"
+      - title: "3"
+        payload: "Almost never"
+      - title: "4"
+        payload: "Never"
+
+  utter_ask_dissociation_dsm:
+  - text: "Have you been ingesting any drugs lately?"
+    buttons:
+      - title: "1"
+        payload: "Almost every day"
+      - title: "2"
+        payload: "At least 3 times a week"
+      - title: "3"
+        payload: "Almost never"
+      - title: "4"
+        payload: "Never"
+
+  utter_ask_suicide_dsm:
+  - text: "Have you been wanting to hurt yourself lately?"
+    buttons:
+      - title: "1"
+        payload: "Almost every day"
+      - title: "2"
+        payload: "At least 3 times a week"
+      - title: "3"
+        payload: "Almost never"
+      - title: "4"
+        payload: "Never"
 
   utter_user_mood:
   - text: "You are feeling {mood}."
