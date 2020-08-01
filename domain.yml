@@ -11,6 +11,7 @@ intents:
   - inform_number
   - affirm
   - deny
+  - inform_scale
 
 entities:
   - name
@@ -21,6 +22,7 @@ entities:
   - neighborhood
   - ethnicity
   - major
+  - scale_frequency
 
 slots:
   name:
@@ -158,7 +160,7 @@ responses:
         payload: "Very Sad"
 
   utter_ask_anxiety_dsm:
-  - text: "Have you been avoiding anxious situations?"
+  - text: "Have you been Feeling nervous, anxious, frightened, worried, or on edge in the past 2 weeks?"
     buttons:
       - title: "1"
         payload: "Almost every day"
@@ -170,7 +172,7 @@ responses:
         payload: "Never"
 
   utter_ask_drug_dsm:
-  - text: "Have you been ingesting any drugs lately?"
+  - text: "Have you been ingesting any drugs or medicines without prescription in the past 2 weeks?"
     buttons:
       - title: "1"
         payload: "Almost every day"
@@ -182,7 +184,7 @@ responses:
         payload: "Never"
 
   utter_ask_depression_dsm:
-  - text: "Have you been feeling down lately?"
+  - text: "Have you been feeling down, depressed, or hopeless in the past 2 weeks?"
     buttons:
       - title: "1"
         payload: "Almost every day"
@@ -194,7 +196,8 @@ responses:
         payload: "Never"
 
   utter_ask_mania_dsm:
-  - text: "Have you been happy lately?"
+  - text: "Have you been starting lots more projects than usual or doing more risky things than
+usual in the past 2 weeks?"
     buttons:
       - title: "1"
         payload: "Almost every day"
@@ -206,7 +209,8 @@ responses:
         payload: "Never"
 
   utter_ask_psychosis_dsm:
-  - text: "Have you been hearing other people's thoughts lately?"
+  - text: "Have you been feeling that someone could hear your thoughts, or that you could hear
+what another person was thinking in the past 2 weeks?"
     buttons:
       - title: "1"
         payload: "Almost every day"
@@ -218,7 +222,8 @@ responses:
         payload: "Never"
 
   utter_ask_dissociation_dsm:
-  - text: "Have you been ingesting any drugs lately?"
+  - text: "Have you been feeling detached or distant from yourself, your body, your physical
+surroundings, or your memories in the past 2 weeks?"
     buttons:
       - title: "1"
         payload: "Almost every day"
@@ -230,7 +235,7 @@ responses:
         payload: "Never"
 
   utter_ask_suicide_dsm:
-  - text: "Have you been wanting to hurt yourself lately?"
+  - text: "Have you been thinking of actually hurting yourself in the past 2 weeks?"
     buttons:
       - title: "1"
         payload: "Almost every day"
@@ -241,14 +246,14 @@ responses:
       - title: "4"
         payload: "Never"
 
+  utter_end_triage:
+  - text: "Fim da triagem."
+
   utter_user_mood:
   - text: "You are feeling {mood}."
 
   utter_ask_triage:
   - text: "Do you want to go through our triage?"
-    buttons:
-      - title: "Yes, I feel comfortable"
-      - title: "No, I don't feel comfortable"
 
   utter_triage_choice:
   - text: "You chose to answer? {triage}."
@@ -303,6 +308,7 @@ actions:
 
 forms:
   - demographic_form
+  - triage_form
 
 
 session_config:

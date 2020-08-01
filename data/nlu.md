@@ -78,6 +78,13 @@
 -[Engineer](major)
 -[Philosophy](major)
 
+## intent:inform_scale
+- [Almost every day](scale_frequency)
+- [At least 3 times a week](scale_frequency)
+- [Almost never](scale_frequency)
+- [Never](scale_frequency)
+
+
 ## intent:affirm
 - yes
 - of course

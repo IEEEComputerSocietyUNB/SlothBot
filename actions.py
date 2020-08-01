@@ -219,33 +219,45 @@ class TriageForm(FormAction):
         - a whole message
         or a list of them, where a first match will be picked"""
         response = {
-            "age": [
+            "anxiety_dsm": [
                 self.from_entity(
-                    entity="number", intent=["inform_number"]
+                    entity="scale_frequency", intent=["inform_scale"]
                 ),
             ],
 
-            "gender": self.from_entity(entity="gender"),
-
-            "neighborhood": self.from_entity(entity="neighborhood"),
-
-            "therapy": [
-            self.from_intent(intent="affirm", value=True),
-            self.from_intent(intent="deny", value=False)
-            ],
-
-            "ethnicity": self.from_entity(entity="ethnicity"),
-
-            "work": [
-            self.from_intent(intent="affirm", value=True),
-            self.from_intent(intent="deny", value=False)
-            ],
-
-            "major": self.from_entity(entity="major"),
-
-            "timeunb": [
+            "drug_dsm": [
                 self.from_entity(
-                    entity="number", intent=["inform_number"]
+                    entity="scale_frequency", intent=["inform_scale"]
+                ),
+            ],
+
+            "depression_dsm": [
+                self.from_entity(
+                    entity="scale_frequency", intent=["inform_scale"]
+                ),
+            ],
+
+            "mania_dsm": [
+                self.from_entity(
+                    entity="scale_frequency", intent=["inform_scale"]
+                ),
+            ],
+
+            "psychosis_dsm": [
+                self.from_entity(
+                    entity="scale_frequency", intent=["inform_scale"]
+                ),
+            ],
+
+            "dissociation_dsm": [
+                self.from_entity(
+                    entity="scale_frequency", intent=["inform_scale"]
+                ),
+            ],
+
+            "suicide_dsm": [
+                self.from_entity(
+                    entity="scale_frequency", intent=["inform_scale"]
                 ),
             ],
         }
@@ -260,5 +272,5 @@ class TriageForm(FormAction):
         """Define what the form has to do
             after all required slots are filled"""
 
-        dispatcher.utter_template("utter_end_demographic", tracker)
+        dispatcher.utter_template("utter_end_triage", tracker)
         return []
