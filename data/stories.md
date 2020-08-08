@@ -63,9 +63,9 @@
   - utter_mood_historic
   - utter_continue
 * affirm
-  - utter_ask_triage
+  - utter_ask_screening
 * affirm
-  - triage_form
+  - screening_form
   - slot{"anxiety_dsm":"anxiety_dsm"}
   - slot{"drug_dsm":"drug_dsm"}
   - slot{"depression_dsm":"depression_dsm"}
@@ -74,6 +74,7 @@
   - slot{"dissociation_dsm":"dissociation_dsm"}
   - slot{"suicide_dsm":"suicide_dsm"}
   - utter_continue
+
 
 
 

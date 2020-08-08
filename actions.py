@@ -194,44 +194,46 @@ class DemographicForm(FormAction):
         return []
 
 
-class TriageForm(FormAction):
+class ScreeningForm(FormAction):
 
     def name(self):
         """Unique identifier of the form"""
-        return "triage_form"
+        return "screening_form"
 
     @staticmethod
     def required_slots(tracker: Tracker) -> List[Text]:
         """A list of required slots that the form has to fill"""
         risky = ['Sometimes', 'At least 3 times a week', 'Almost every day']
+        risky2 = ['Almost never', 'Sometimes', 'At least 3 times a week', 'Almost every day']
         safe = ['Almost never', 'Never']
+
         initial = ["anxiety_dsm", "drug_dsm", "depression_dsm", "mania_dsm", # inicio
                 "psychosis_dsm", "dissociation_dsm", "suicide_dsm"]
         dassA = ["dassA1", "dassA2", "dassA3", "dassA4", "dassA5", "dassA6", "dassA7"]
         dassD = ["dassD1", "dassD2", "dassD3", "dassD4", "dassD5", "dassD6", "dassD7"]
+        dassS = ["dassS1", "dassS2", "dassS3", "dassS4", "dassS5", "dassS6", "dassS7"]
+        eam = ["eam1", "eam2", "eam", "eam4", "eam5", "eam6", "eam7"]
+        assist = ["assist1", "assist2", "assist3"]
+
+        followup = []
+
+        if tracker.get_slot('suicide_dsm') in risky2:
+            return initial
+        if tracker.get_slot('psychosis_dsm') in risky2 or tracker.get_slot('dissociation_dsm') in risky2:
+            return initial
 
         if tracker.get_slot('anxiety_dsm') in risky:
-            if tracker.get_slot('drug_dsm') in safe:
-                if tracker.
+            followup.extend(dassA)
+            followup.extend(dassS)
+        if tracker.get_slot('drug_dsm') in risky:
+            followup.extend(assist)
+        if tracker.get_slot('depression_dsm') in risky:
+            followup.extend(dassD)
+            followup.extend(dassS)
+        if tracker.get_slot('mania_dsm') in risky:
+            followup.extend(eam)
 
-            initial.extend(dassA)
-            return initial.extend(dassD)
-
-        if
-
-
-        else:
-            return ["cuisine", "num_people",
-                    "preferences", "feedback"]
-        #return [
-        #    "anxiety_dsm",
-        #    "drug_dsm",
-        #    "depression_dsm",
-        #    "mania_dsm",
-        #    "psychosis_dsm",
-        #    "dissociation_dsm",
-        #    "suicide_dsm",
-        #]
+        return initial.extend(followup)
 
     def slot_mappings(self):
         """A dictionary to map required slots to
@@ -293,5 +295,5 @@ class TriageForm(FormAction):
         """Define what the form has to do
             after all required slots are filled"""
 
-        dispatcher.utter_template("utter_end_triage", tracker)
+        dispatcher.utter_template("utter_end_screening", tracker)
         return []
