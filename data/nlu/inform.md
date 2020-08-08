@@ -49,23 +49,10 @@
 - [woman](gender)
 - [man](gender)
 
-
-## synonym:female
-- girl
-- woman
-- F
-- female
-
-## synonym:male
-- boy
-- man
-- M
-
 ## intent:inform_neighborhood
 - [DF](neighborhood)
 - [GO](neighborhood)
 - [SP](neighborhood)
-
 
 ## intent:inform_ethnicity
 - I am [white](ethnicity)
