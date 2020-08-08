@@ -129,6 +129,8 @@ class DemographicForm(FormAction):
     def required_slots(tracker: Tracker) -> List[Text]:
         """A list of required slots that the form has to fill"""
 
+
+
         return [
             "age",
             "gender",
@@ -201,16 +203,35 @@ class TriageForm(FormAction):
     @staticmethod
     def required_slots(tracker: Tracker) -> List[Text]:
         """A list of required slots that the form has to fill"""
+        risky = ['Sometimes', 'At least 3 times a week', 'Almost every day']
+        safe = ['Almost never', 'Never']
+        initial = ["anxiety_dsm", "drug_dsm", "depression_dsm", "mania_dsm", # inicio
+                "psychosis_dsm", "dissociation_dsm", "suicide_dsm"]
+        dassA = ["dassA1", "dassA2", "dassA3", "dassA4", "dassA5", "dassA6", "dassA7"]
+        dassD = ["dassD1", "dassD2", "dassD3", "dassD4", "dassD5", "dassD6", "dassD7"]
 
-        return [
-            "anxiety_dsm",
-            "drug_dsm",
-            "depression_dsm",
-            "mania_dsm",
-            "psychosis_dsm",
-            "dissociation_dsm",
-            "suicide_dsm",
-        ]
+        if tracker.get_slot('anxiety_dsm') in risky:
+            if tracker.get_slot('drug_dsm') in safe:
+                if tracker.
+
+            initial.extend(dassA)
+            return initial.extend(dassD)
+
+        if
+
+
+        else:
+            return ["cuisine", "num_people",
+                    "preferences", "feedback"]
+        #return [
+        #    "anxiety_dsm",
+        #    "drug_dsm",
+        #    "depression_dsm",
+        #    "mania_dsm",
+        #    "psychosis_dsm",
+        #    "dissociation_dsm",
+        #    "suicide_dsm",
+        #]
 
     def slot_mappings(self):
         """A dictionary to map required slots to
