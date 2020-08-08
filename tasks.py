@@ -20,7 +20,7 @@ def t(c):
     """
     Train Rasa bot
     """
-    rasa_plus.unify_domain()
+    c.run("rasa_plus unify-domain")
     if platform.system() != "Windows":
         c.run(f"rasa train", pty=True)
     else:
@@ -47,7 +47,6 @@ def sh(c):
         c.run(f"rasa run actions & rasa shell", pty=True)
     else:
         c.run(f"rasa run actions & rasa shell")
-
 
 
 @task
@@ -84,6 +83,7 @@ def dm(c):
     else:
         c.run("rd /s /q models")
         print("All model files removed.")
+
 
 @task
 def dt(c):
