@@ -25,8 +25,8 @@ slots:
   mood:
     type: categorical
     values:
-      - Very happy
-      - Happy
-      - Neutral
-      - Sad
-      - Very sad
+      - Muito feliz
+      - Feliz
+      - Neutro
+      - Triste
+      - Muito triste

@@ -21,6 +21,7 @@ def t(c):
     Train Rasa bot
     """
     c.run("rasa_plus unify-domain")
+    c.run("rasa_plus unify-nlu")
     if platform.system() != "Windows":
         c.run(f"rasa train", pty=True)
     else:
