@@ -1,90 +1,90 @@
 responses:
   utter_greet:
-  - text: "Hey!"
-  - text: "Hello, human!"
-  - text: "Good to see you, human!"
-  - text: "Hi!"
+  - text: "Olá!"
+  - text: "Oi humano!"
+  - text: "Bom te ver, humano!"
+  - text: "Oi!"
 
   utter_goodbye:
-  - text: "Bye"
-  - text: "Bye, {name}. See you next time!"
-  - text: "Goodbye, have a nice day!"
-  - text: "Bye, human. I will be here if you want to talk more."
+  - text: "Tchau"
+  - text: "Tchau, {name}. Até a próxima!"
+  - text: "Tchau tchau, tenha um bom dia!"
+  - text: "Tchau humano. Estarei aqui se que quiser conversar mais."
 
   utter_iamabot:
-  - text: "I am a bot, powered by ENERGY."
+  - text: "Eu sou um bot."
 
   utter_ask_name:
-  - text: "Nice meeting you! What's your name?"
-  - text: "How can I call you?"
-  - text: "I don't know your name yet. What's your name?"
+  - text: "Prazer em conhecê-lo! Qual o seu nome?"
+  - text: "Como posso te chamar?"
+  - text: "Não sei o seu nome ainda. Como você se chama?"
 
   utter_name:
-  - text: "Nice name, {name}! My name is Rabot!"
-  - text: "My name is Rabot, {name}."
-  - text: "Lovely name, {name}! My name is Rabot."
-  - text: "{name}, what a different name! I'm Rabot!"
+  - text: "Que nome legal, {name}! Meu nome é Rabot!"
+  - text: "Meu nome é Rabot, {name}."
+  - text: "Que belo nome, {name}! Meu nome é Rabot."
+  - text: "{name}, que nome diferente! Eu sou Rabot!"
 
   utter_ask_mood:
-  - text: "How are you feeling today, {name}?"
+  - text: "Como você está se sentindo hoje, {name}?"
     buttons:
       - title: "1"
-        payload: "Very Happy"
+        payload: "Muito feliz"
       - title: "2"
-        payload: "Happy"
+        payload: "Feliz"
       - title: "3"
-        payload: "Neutral"
+        payload: "Neutro"
       - title: "4"
-        payload: "Sad"
+        payload: "Triste"
       - title: "5"
-        payload: "Very Sad"
+        payload: "Muito triste"
 
   utter_user_mood:
-  - text: "You are feeling {mood}."
+  - text: "Voce está se sentindo {mood}."
 
   utter_ask_triage:
-  - text: "Do you want to go through our triage?"
+  - text: "Você deseja passar pela triagem?"
     buttons:
-      - title: "Yes, I feel comfortable"
-      - title: "No, I don't feel comfortable"
+      - title: "Sim, Eu me sinto confortável"
+      - title: "Não, Eu não me sinto confortável"
 
   utter_triage_choice:
-  - text: "You chose to answer? {triage}."
+  - text: "Você decidiu responder? {triage}."
 
   utter_ask_demographic:
-  - text: "I would like to know more about you. Can I ask you some questions?"
+  - text: "Eu gostaria de saber um pouco mais sobre você. Posso te fazer algumas perguntas?"
 
   utter_ask_age:
-  - text: "How old are you?"
+  - text: "Qual a sua idade?"
 
   utter_ask_gender:
-  - text: "To which gender identity do you most identify?"
+  - text: "Com qual gênero você mais se identifica?"
 
   utter_ask_neighborhood:
-  - text: "Where do you live?"
+  - text: "Onde você mora"
 
   utter_ask_therapy:
-  - text: "Are you currently doing therapy with a professional?"
+  - text: "Você está atualmente fazendo terapia com um profissional?"
 
   utter_ask_ethnicity:
-  - text: "To which ethnicity do you identify most?"
+  - text: "Com qual etnia você mais se identifica?"
 
   utter_ask_work:
-  - text: "Are you currently working?"
+  - text: "Você trabalha atualmente?"
 
   utter_ask_major:
-  - text: "What's your major?"
+  - text: "Qual a sua profissão?"
 
   utter_ask_timeunb:
-  - text: "How many semesters are you studying at UnB?"
+  - text: "Há quantos semestres você estuda na UnB?"
 
   utter_end_demographic:
-  - text: "Great! Now I know more about you. Seems you are a {age} years old {gender} who is doing {major}!"
-  - text: "Thank you! I know you much better now. Seems you are a {age} years old {gender} who is doing {major}!"
+  - text: "Ótimo! Agora eu te conheço um pouco mais. Parece que você é {gender} com {age} anos de idade e é {major}!"
+  - text: "Obrigado! Agora eu te conheço muito melhor. Parece que você é {gender} com {age} anos de idade e é {major}!"
 
   utter_mood_feedback:
-  - text: "I see, you are feeling {mood} today..."
+  - text: "Entendi, você está {mood} hoje..."
 
   utter_continue:
-  - text: "Should we keep going?"
-  - text: "Can we keep talking?"
+  - text: "Podemos continuar?"
+  - text: "Você quer continuar conversando?"

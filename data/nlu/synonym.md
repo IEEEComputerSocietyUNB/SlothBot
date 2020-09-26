@@ -1,10 +1,10 @@
 ## synonym:female
-- girl
-- woman
+- mulher
+- garota
 - F
-- female
+- feminino
 
 ## synonym:male
-- boy
-- man
+- garoto
+- homem
 - M
